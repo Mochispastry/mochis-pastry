@@ -1,0 +1,17 @@
+server:
+  port: ${APP_PORT}
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${GIT_URI}
+          searchPaths: ${GIT_SEARCH_PATHS}
+          username: ${GIT_USERNAME}
+          password: ${GIT_PASSWORD}
+          defaultLabel: ${GIT_DEFAULT_LABEL}
+
+  application:
+    name: ${APP_NAME}
+
