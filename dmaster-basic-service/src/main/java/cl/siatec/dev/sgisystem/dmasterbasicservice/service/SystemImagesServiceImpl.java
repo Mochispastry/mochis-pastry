@@ -2,7 +2,6 @@ package cl.siatec.dev.sgisystem.dmasterbasicservice.service;
 
 import cl.siatec.dev.sgisystem.dmasterbasicservice.entity.SystemImages;
 import cl.siatec.dev.sgisystem.dmasterbasicservice.repository.SystemImagesRepository;
-import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
