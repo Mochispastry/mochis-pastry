@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/db_d001b001_dmaster_basic_mysql?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: root
-    password: Casa7417064.
+    password: Mul7417064.
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
