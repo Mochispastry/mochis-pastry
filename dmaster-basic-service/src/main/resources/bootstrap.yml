@@ -1,5 +1,3 @@
-server:
-  port: ${APP_PORT}
 
 spring:
   application:
