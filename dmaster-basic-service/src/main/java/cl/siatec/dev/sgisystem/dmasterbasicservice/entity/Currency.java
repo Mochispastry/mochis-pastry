@@ -14,18 +14,21 @@ import java.sql.Timestamp;
 @Setter
 @ToString
 @Builder
-@Table(name = "brands")
-public class Brands {
+@Table(name = "currency")
+public class Currency {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name", nullable = false, unique = true, length = 100)
+    @Column(name = "name", nullable = false, unique = true, length = 75)
     private String name;
 
-    @ManyToOne(cascade = CascadeType.REFRESH, optional = false)
-    @JoinColumn(name = "system_images_id", nullable = false, unique = true)
-    private SystemImages systemImages;
+    @Column(name = "abrev", nullable = false, unique = true, length = 10)
+    private String abrev;
+
+    @Column(name = "description")
+    private String description;
 
     @CreationTimestamp
     @Column(name = "create_at_tbl")
@@ -34,7 +37,5 @@ public class Brands {
     @UpdateTimestamp
     @Column(name = "update_at_tbl")
     private Timestamp updateAt;
-
-
 
 }
