@@ -11,24 +11,23 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 @Entity
-@Table(name = "entities")
-public class Entities {
+@Table(name = "contact_person")
+public class ContactPerson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "type_entity", nullable = false, length = 50)
-    private String typeEntity;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "entities_id", nullable = false)
+    private Entities entities;
 
-    @Column(name = "rut", nullable = false, length = 12)
-    private String rut;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "entity_parent_id", nullable = false)
+    private Entities entityParent;
 
-    @Column(name = "mail", nullable = false, length = 100)
-    private String mail;
-
-    @Column(name = "phone", nullable = false, length = 20)
-    private String phone;
+    @Column(name = "relationship", nullable = false, length = 100)
+    private String relationship;
 
     @CreationTimestamp
     @Column(name = "create_at_tbl")
@@ -37,7 +36,5 @@ public class Entities {
     @UpdateTimestamp
     @Column(name = "update_at_tbl")
     private Timestamp updateAt;
-
-
 
 }

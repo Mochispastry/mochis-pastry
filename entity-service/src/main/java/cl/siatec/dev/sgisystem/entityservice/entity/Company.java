@@ -25,6 +25,9 @@ public class Company {
     @Column(name = "social_razon", nullable = false, length = 150)
     private String socialRazon;
 
+    @Column(name = "fantasy_name", nullable = false, length = 100)
+    private String fantasyName;
+
     @CreationTimestamp
     @Column(name = "create_at_tbl")
     private Timestamp createAt;

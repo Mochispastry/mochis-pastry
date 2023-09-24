@@ -7,28 +7,32 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "entities")
-public class Entities {
+@Table(name = "employees")
+public class Employees {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "type_entity", nullable = false, length = 50)
-    private String typeEntity;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "entities_id", nullable = false)
+    private Entities entities;
 
-    @Column(name = "rut", nullable = false, length = 12)
-    private String rut;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "init_contract_date")
+    private Date initContractDate;
 
-    @Column(name = "mail", nullable = false, length = 100)
-    private String mail;
+    @Column(name = "type_contract", nullable = false, length = 50)
+    private String typeContract;
 
-    @Column(name = "phone", nullable = false, length = 20)
-    private String phone;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "end_contract")
+    private Date endContract;
 
     @CreationTimestamp
     @Column(name = "create_at_tbl")
